@@ -1,2 +1,4 @@
-# Temporary home of the Legacy DNN Forum Theme from 2016
+# Legacy DNN Forum 2019 Theme
 ## Will be replaced by a new Bootstrap 5 version without all the legacy overwrites..
+
+* Don't use this in production *
