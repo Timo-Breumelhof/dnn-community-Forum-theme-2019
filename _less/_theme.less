@@ -1,0 +1,550 @@
+@import url(../_legacy-module.css);
+
+
+@import "mixins/_variables.less";
+@import "mixins/_colours.less";
+@import "mixins/_interface.less";
+@import "parts/_edit.less";
+
+// For editor
+
+
+/* Active Forums */
+
+@ColBorderMain: @Col2Light;
+@ColBorderSub: @Col2DesatLight;
+@ColBorderInput: @Col2SatDark;
+
+@BorderW1: 2px;
+@BorderW2: 2px;
+
+
+.activeForums {
+
+	.aftoolbarpanel li {
+		white-space: nowrap;
+	}
+
+	.fa {
+		// font-size:1.1em;
+	}
+
+}
+
+#LabelMargin() {
+	margin-left: 0.5em;
+}
+
+
+.font-reset() {
+	font-family: inherit;
+	font-size: 1em;
+}
+
+
+
+.afcontainer {
+	// Reset what's rendered inline
+	.font-reset;
+}
+
+.activeForums {
+	margin-bottom: 2em;
+
+	.afdropdown,
+	.afcontainer,
+	.aftextbox,
+	.afgrid,
+	.afnormal,
+	blockquote {
+		.font-reset;
+	}
+
+
+
+	.interface;
+
+	@import "parts/_forums-view.less";
+
+
+
+	.tile-af {
+		border-bottom: solid @BorderW1 @ColBorderMain;
+		padding: 1em;
+
+		.ct-forumname {
+			font-weight: bold;
+			font-size: 2em;
+			margin-bottom: 0.5em;
+			display: block;
+		}
+	}
+
+	/* Forum > Search */
+	.Connect-SearchBarInput {
+
+		* {
+			vertical-align: middle;
+		}
+
+		input {
+			margin-right: 1em;
+			width: 250px;
+			padding: 0.36em 0.5em;
+			font-size: 16px;
+			color: @Col2Medium;
+			border: solid @BorderW1 @ColBorderInput;
+			box-sizing: content-box;
+		}
+
+		a {
+			margin: 0;
+		}
+	}
+
+	.dcf-quick-search {
+		display: inline-block;
+	}
+
+
+	@NextColor: #007dcc;
+
+
+
+
+
+	/* Forums Topic */
+	.fa-prev-next {
+		margin-bottom: 1em;
+		margin-top: 0.7em;
+		padding-bottom: 0.7em;
+		border-bottom: solid @BorderW1 #dcdcdc;
+
+		img {
+			display: none;
+		}
+
+		a {
+			color: @NextColor;
+
+			&:before {
+				display:none; // Overrule old Module.css
+			}
+
+			&:after {
+				display:none; // Overrule old Module.css
+			}
+
+			.fa{
+				background: #eee;
+				width: 2em;
+				line-height: 2em;
+				text-align: center;
+				border-radius: 50%;
+			}
+
+
+		}
+
+		.fa-prev{
+			.fa{margin-right: 0.5em;}
+
+		}
+		.fa-next{
+			.fa{margin-left: 0.5em;}
+
+		}
+
+		#font-scale;
+	}
+
+
+	// Forum grids
+	.aftopicrow,
+	.aftopicrowalt,
+	.aftopicrownew,
+	.aftopicrownewalt {
+		padding: 1.5em 0;
+
+		>table {
+			margin-bottom: 0;
+
+			.af-posticon {
+
+				padding: 0 1em 0 0 !important; // Overruling inline style
+			}
+		}
+
+
+
+	}
+
+
+	.af-topic {
+		header {
+			h2 {
+				margin: 0 0 0.3em;
+				font-size: 1em;
+
+				@media screen and(min-width:786px) {
+					font-size: 1.5em;
+				}
+
+				>div {
+					display: inline-block;
+					font-size: 0.6em;
+					margin-right: 0.5em;
+				}
+			}
+
+			padding: 0;
+			margin-bottom: 0.5em;
+			border-bottom: solid @BorderW1 #dcdcdc;
+		}
+
+		.dnnPrimaryAction {
+			margin-bottom: 0;
+		}
+
+		i[class*=fa-thumbs] {
+			font-size: 1.5em;
+			cursor: pointer;
+		}
+
+		.fa-thumbs-up {
+			color: @GreyDark;
+		}
+
+		.fa-thumbs-o-up {
+			color: @Col2Medium;
+		}
+
+	}
+
+	.af-crumb {
+		line-height: 2.5em;
+	}
+
+	.af-topic-controls {
+		clear: both;
+		padding: 0.7em 0;
+
+		.af-sort {
+			select {
+				#LabelMargin;
+			}
+		}
+
+	}
+
+	.af-topic-head {
+		line-height: 40px;
+		color: @ColBlack;
+		font-weight: bold;
+
+	}
+
+	.af-topic-item {
+		clear: both;
+		margin: 0 0 2em;
+
+
+		.af-topic {
+
+			// There's an issue here, we want to set a background color but that is an issue with the boostrap columns, 
+			// so we'll remove the column margin and padding as otherwise on mobile the columns stick out on the sides
+
+			margin: 0;
+
+			>div {
+				padding: 1em;
+				background: @Col2DesatSuperLight;
+
+				&:nth-child(1) {
+					background: @Col2DesatExtraLight;
+				}
+
+			}
+
+			.af-topic-content-top,
+			.body {
+				border-bottom: solid @BorderW2 @Col2DesatExtraLight;
+			}
+
+
+
+		}
+
+	}
+
+
+
+
+	/* Topic info */
+
+	.af-topic {
+		img {
+			max-width: 100%;
+			height: auto !important;
+		}
+
+		>div {
+			background-color: transparent;
+
+
+			.body {
+				padding-top: 1em;
+				padding-bottom: 2em;
+
+			}
+
+			.signature {
+				padding-top: 0.8em;
+
+
+				* {
+					font-size: 1em !important
+				}
+
+				img {
+					max-width: 300px !important;
+				}
+
+				// Not visible on Mobile
+				display:none;
+
+				@media screen and (min-width:768px) {
+					display: block;
+				}
+			}
+
+			.col-6 {
+				padding-top: 1em;
+			}
+
+
+		}
+
+	}
+
+	.af-topic-info {
+
+		#font-scale;
+
+		br {
+
+			display: none;
+		}
+
+
+		>span {
+			display: block;
+		}
+
+		>span.af-user-avatar {
+			padding: 1em 0;
+		}
+
+
+		// Make sure the avatar is on the left and the rest on the right on Mobile
+		.afavatarprofile {
+
+			float: left;
+			padding-right: 1.5em;
+
+			@media screen and (min-width: 768px) {
+				padding-right: 0;
+			}
+		}
+
+		.af-avatar {
+			max-width: 75px;
+			height: auto !important;
+			padding-top: 0.5em;
+			text-align: center;
+			border-radius: 50%;
+
+			@media screen and (min-width: 768px) {
+
+				max-width: 100%;
+			}
+		}
+
+		.af-user,
+		.af-avatar,
+		.af-profile-rank,
+		.af-profile-status {
+			padding-bottom: 0.5em;
+		}
+
+		.af-post-info-count span {
+			display: block;
+		}
+
+		.afbottomprofile {
+			word-wrap: break-word;
+		}
+	}
+
+	.af-user-edit {
+		padding-top: 0.3em;
+		text-align: right;
+		margin-right: 1em;
+	}
+
+	.af-user-name {
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 1.5em;
+			padding-right: 0.3em;
+		}
+	}
+
+	.af-topic-content-top {
+		padding-bottom: 0.7em;
+		margin-bottom: 0.7em;
+		margin-top: 0;
+
+		#font-scale;
+
+		i {
+			font-size: 1em;
+			color: @Col2;
+			cursor: pointer;
+		}
+	}
+
+	.af-topic-actions {
+
+		#font-scale;
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: inline-block;
+			margin-right: 0.5em;
+			cursor: pointer;
+		}
+
+
+
+	}
+
+
+
+	.af-avatar-profile,
+	.af-topic-content-top {
+
+		@media only screen and (min-width : 992px) {
+			font-size: 1em;
+		}
+	}
+
+
+	@media only screen and (max-width : 767px) {
+		.af-topic-info .af-user-avatar {
+			position: absolute;
+			right: 10px;
+			top: 0;
+		}
+
+		.af-topic-content-top {
+			padding: 0.7em 0;
+		}
+
+		.af-topic-content-top .af-topic-actions {
+			padding-top: 0;
+
+			li {
+				padding-top: 0.5em;
+			}
+		}
+	}
+
+	@media only screen and (min-width : 768px) {
+
+
+		.wrap-full-height {
+			overflow: hidden;
+		}
+
+		.full-height {
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+		}
+
+		.af-topic-actions li {
+			margin-left: 0.5em;
+			margin-right: 0;
+		}
+	}
+
+	// Quick Reply
+
+	.af-quickreply {
+
+		&,
+		& * {
+			font-size: 1em;
+		}
+
+		padding: 2em 0 1em;
+		margin-top:1em;
+		border-top:solid @BorderW2 @Col2Light;
+		border-bottom:solid @BorderW2 @Col2Light;
+
+		table {
+			td {
+				padding-right: 0.5em;
+				padding-left: 0;
+			}
+		}
+
+		.afcontrolheader {
+			font-size: 1.2em;
+			color: @Col2ExtraDark;
+			font-style: normal;
+		}
+
+		#groupQR {
+			>table>tbody {}
+
+
+
+			#txtSubject {
+				border: none;
+				background: none;
+				color: @Col2;
+				font-weight: bold;
+			}
+
+			.afButton {
+				border-color: transparent;
+				background: @GreyExtraLight;
+
+				&:hover {
+					background: @Col2ExtraLight;
+				}
+			}
+
+			#txtBody {
+				border-radius: 0;
+				background: #fff;
+
+			}
+		}
+
+		.amtbwrapper {
+			padding-top: 1em;
+		}
+	}
+
+}

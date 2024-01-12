@@ -1,0 +1,111 @@
+// Forums overview page
+.afcontainer{
+
+	>.afgrid{
+		margin-bottom: 4em;
+	}
+}
+.afgroupsection{
+	
+ 	margin: 2em 0;
+	color:#000;
+	text-align:left;
+	
+	.afgroupsectiontitle{
+		padding-left: 0;
+		font-size:1.3em;
+	}
+}
+
+
+
+.aftopicsubtitle{
+	padding-top:1em;
+}
+
+.af_lastpost{
+	line-height:170%;
+}
+
+.afgrouprow{
+	border-bottom:@af-border;
+
+}
+
+
+.afcontrolheader{
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	font-weight:normal;
+}
+
+// Single forum topic list
+.afcrumb{
+	font-size:1em;
+	padding-bottom: 1em;
+}
+
+.afbuttonarea{
+	margin: 1.5em 0 1em;
+}
+
+.afminisearch {	
+	table{
+		td{
+			vertical-align:middle;
+		}
+	}
+	.afnormal{
+		padding-right: 0.7em;
+	}
+	.afnormal, input{
+		margin:0;
+	}
+}
+
+
+
+// Search popup
+
+	.aftb-search-popup{
+		input[type=text]{
+			margin: 0.5em 0.5em 0.5em 0;
+		}
+		// Hide placeholder
+		
+		::-webkit-input-placeholder {
+		   color:transparent;
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color:transparent; 
+		}
+
+		:-ms-input-placeholder {  
+		   color:transparent;
+		}
+		
+		:placeholder{
+			color:transparent;
+		}
+	
+	}
+	
+	// Fix buttons at bottom on edit screen
+	.amtbwrapper{
+
+		 > div{
+				max-width: 100% !important;
+
+			.amimagebutton, .amimagebutton_over{
+				width: 80px !important;
+			}
+	
+		}
+	}
+	
+	
+	// Ratings
+	ul.fa-rater {
+		width: 100px;
+	}
